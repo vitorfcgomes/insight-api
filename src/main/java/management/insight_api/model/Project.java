@@ -3,13 +3,16 @@ package management.insight_api.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import management.insight_api.model.enums.StatusProjeto;
+import management.insight_api.model.enums.ProjectStatus;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "tb_projects")
 @Data
 @NoArgsConstructor
-public class Projeto {
+public class Project {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,10 +22,15 @@ public class Projeto {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "cliente_id")
-    private Cliente cliente;
+    @JoinColumn(name = "client_id")
+    private Client client;
 
     @Enumerated(EnumType.STRING)
-    private StatusProjeto statusProjeto;
+    private ProjectStatus status;
+
+    private LocalDate startDate;
+    private LocalDate expectedEndDate;
+    private LocalDate endDate;
+    private BigDecimal value;
 
 }
