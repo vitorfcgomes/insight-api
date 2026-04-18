@@ -206,7 +206,7 @@ src/main/resources/
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/insight-api.git
+git clone https://github.com/vitorfcgomes/insight-api.git
 cd insight-api
 ```
 
