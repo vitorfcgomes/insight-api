@@ -4,17 +4,23 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name = "tb_clients")
 @Data
 @NoArgsConstructor
-public class Cliente {
+public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
     private String email;
-    private String password;
+    private String company;
+    private String phone;
+    private LocalDate contractDate;
+
+
 
 }
