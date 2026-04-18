@@ -1,4 +1,4 @@
-# 📊 PRS Insight API
+# 📊 Insight API
 
 > Sistema backend de gestão e análise inteligente de projetos com integração de IA generativa.
 
@@ -6,7 +6,7 @@
 
 ## 💡 Conceito do Projeto
 
-O **PRS Insight API** nasceu para simular o core de negócio de uma empresa especializada em **Business Intelligence e Inteligência Artificial**. O sistema resolve um problema real: gestores que precisam acompanhar dezenas de projetos simultâneos de múltiplos clientes não têm visibilidade clara sobre o que está atrasado, qual cliente gera mais demanda ou qual é a receita consolidada.
+O **Insight API** nasceu para simular o core de negócio de uma empresa especializada em **Business Intelligence e Inteligência Artificial**. O sistema resolve um problema real: gestores que precisam acompanhar dezenas de projetos simultâneos de múltiplos clientes não têm visibilidade clara sobre o que está atrasado, qual cliente gera mais demanda ou qual é a receita consolidada.
 
 A solução combina três camadas:
 
