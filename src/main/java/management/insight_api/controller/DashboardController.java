@@ -20,7 +20,7 @@ public class DashboardController {
     private final DashboardService dashboard;
 
     @GetMapping("/projects/status")
-    public ResponseEntity<List<ProjectStatusCount>> contByStatus(){
+    public ResponseEntity<List<ProjectStatusCount>> countByStatus(){
         return ResponseEntity.ok(dashboard.countByStatus());
     }
 
