@@ -2,7 +2,9 @@ package management.insight_api.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import management.insight_api.model.enums.ProjectStatus;
 
 import java.math.BigDecimal;
@@ -10,7 +12,8 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "tb_projects")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 public class Project {
 
