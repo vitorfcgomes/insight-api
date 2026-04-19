@@ -218,17 +218,21 @@ CREATE DATABASE insight_api;
 
 ### 3. Configure as variáveis de ambiente
 
-Configure as seguintes variáveis no seu sistema ou na IDE (IntelliJ: `Run > Edit Configurations > Environment Variables`):
+Copie o arquivo de exemplo e preencha com seus valores:
 
-```env
-DB_URL=jdbc:postgresql://localhost:5432/insight_api
-DB_USERNAME=seu_usuario
-DB_PASSWORD=sua_senha
-JWT_SECRET=sua-chave-secreta-longa-e-aleatoria-aqui
-JWT_EXPIRATION=86400000
-GROQ_API_KEY=sua_chave_groq_aqui
-GROQ_API_URL=https://api.groq.com/openai/v1/chat/completions
+```bash
+cp .env.example .env
 ```
+
+| Variável | Descrição |
+|---|---|
+| `DB_URL` | URL do banco — veja exemplos no `.env.example` |
+| `DB_USERNAME` | Usuário do banco de dados |
+| `DB_PASSWORD` | Senha do banco de dados |
+| `JWT_SECRET` | Qualquer string longa e aleatória |
+| `JWT_EXPIRATION` | Tempo em ms — `86400000` = 24 horas |
+| `GROQ_API_KEY` | Chave obtida em [console.groq.com](https://console.groq.com) (gratuito) |
+| `GROQ_API_URL` | Já preenchido no `.env.example` |
 
 > ⚠️ **Nota de segurança:** O endpoint `/auth/register` está público para facilitar os testes. Em produção, seria protegido ou removido, permitindo criação de usuários apenas por um ADMIN.
 
@@ -239,6 +243,64 @@ GROQ_API_URL=https://api.groq.com/openai/v1/chat/completions
 ```
 
 O Hibernate cria as tabelas automaticamente e o `data.sql` insere os dados fictícios na primeira execução.
+
+### 5. Acesse o Swagger
+
+```
+http://localhost:8080/swagger-ui/index.html
+```
+ 
+---
+
+## 🗄️ Compatibilidade com Outros Bancos de Dados
+
+O projeto usa JPA/Hibernate como ORM, então é compatível com qualquer banco de dados relacional. Basta trocar a dependência e a URL de conexão.
+
+### Rodando com MySQL (MySQL Workbench)
+
+**1. Troca a dependência no `pom.xml`**
+
+Remove:
+```xml
+<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <scope>runtime</scope>
+</dependency>
+```
+
+Adiciona:
+```xml
+<dependency>
+    <groupId>com.mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
+    <scope>runtime</scope>
+</dependency>
+```
+
+**2. Crie o banco no MySQL Workbench**
+
+```sql
+CREATE DATABASE insight_api CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+
+**3. Atualize a variável `DB_URL` no seu `.env`**
+
+```env
+DB_URL=jdbc:mysql://localhost:3306/insight_api
+```
+
+### Comparativo de configuração por banco
+
+| Banco | Driver (`pom.xml`) | URL de conexão |
+|---|---|---|
+| PostgreSQL | `org.postgresql:postgresql` | `jdbc:postgresql://localhost:5432/insight_api` |
+| MySQL | `com.mysql:mysql-connector-j` | `jdbc:mysql://localhost:3306/insight_api` |
+| H2 (memória) | `com.h2database:h2` | `jdbc:h2:mem:insight_api` |
+
+> O H2 é útil para testes rápidos sem precisar instalar nenhum banco — os dados ficam em memória e são perdidos ao reiniciar.
+ 
+---
 
 ### 5. Acesse o Swagger
 
