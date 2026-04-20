@@ -4,7 +4,7 @@
 
 ---
 
-## 💡 Conceito do Projeto
+## Conceito do Projeto
 
 O **Insight API** nasceu para simular o core de negócio de uma empresa especializada em **Business Intelligence e Inteligência Artificial**. O sistema resolve um problema real: gestores que precisam acompanhar dezenas de projetos simultâneos de múltiplos clientes não têm visibilidade clara sobre o que está atrasado, qual cliente gera mais demanda ou qual é a receita consolidada.
 
@@ -20,7 +20,7 @@ O resultado é um endpoint que, ao ser chamado, entrega automaticamente um pará
 
 ---
 
-## 🏗️ Arquitetura
+## Arquitetura
 
 O projeto segue a **arquitetura em camadas** (Layered Architecture), padrão do ecossistema Spring Boot:
 
@@ -194,7 +194,7 @@ src/main/resources/
 
 ---
 
-## 🚀 Como Rodar
+## Como Rodar
 
 ### Pré-requisitos
 
@@ -252,7 +252,7 @@ http://localhost:8080/swagger-ui/index.html
  
 ---
 
-## 🗄️ Compatibilidade com Outros Bancos de Dados
+## Compatibilidade com Outros Bancos de Dados
 
 O projeto usa JPA/Hibernate como ORM, então é compatível com qualquer banco de dados relacional. Basta trocar a dependência e a URL de conexão.
 
@@ -310,7 +310,7 @@ http://localhost:8080/swagger-ui/index.html
 
 ---
 
-## 🔐 Autenticação no Swagger
+## Autenticação no Swagger
 
 1. Faça `POST /auth/login` com as credenciais abaixo
 2. Copie o valor do campo `token` na resposta
@@ -373,7 +373,7 @@ http://localhost:8080/swagger-ui/index.html
 
 ---
 
-## 🤖 Exemplo de Resposta — Insight com IA
+## Exemplo de Resposta — Insight com IA
 
 ```json
 {
@@ -383,7 +383,7 @@ http://localhost:8080/swagger-ui/index.html
 
 ---
 
-## 📊 Dados Fictícios Incluídos
+## Dados Fictícios Incluídos
 
 O sistema vem com dados pré-carregados para demonstração imediata:
 
