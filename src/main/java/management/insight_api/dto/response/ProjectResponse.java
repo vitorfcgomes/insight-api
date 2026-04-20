@@ -7,6 +7,6 @@ import java.time.LocalDate;
 
 
 public record ProjectResponse(Long id, String title, String description,
-                              ClientResponse clientId, ProjectStatus status, LocalDate startDate,
+                              ClientResponse client, ProjectStatus status, LocalDate startDate,
                               LocalDate expectedEndDate, LocalDate endDate, BigDecimal value) {
 }
