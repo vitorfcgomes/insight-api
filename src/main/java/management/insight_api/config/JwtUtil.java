@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
+import java.nio.charset.StandardCharsets;
 import java.util.Date;
 
 
@@ -41,7 +42,6 @@ public class JwtUtil {
     }
 
     private boolean isTokenExpired(String token){
-
         return Jwts.parser()
                 .verifyWith(getSigningKey())
                 .build()
@@ -50,7 +50,8 @@ public class JwtUtil {
                 .getExpiration()
                 .before(new Date());
     }
+
     private SecretKey getSigningKey(){
-        return Keys.hmacShaKeyFor(secret.getBytes());
+        return Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
     }
 }
