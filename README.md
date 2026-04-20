@@ -110,7 +110,7 @@ RestClient → POST https://api.groq.com/openai/v1/chat/completions
 
 ---
 
-## 🛠️ Stack Tecnológica
+## Stack Tecnológica
 
 | Tecnologia | Versão | Uso |
 |---|---|---|
@@ -126,7 +126,7 @@ RestClient → POST https://api.groq.com/openai/v1/chat/completions
 
 ---
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 src/main/java/management/insight_api/
@@ -327,7 +327,7 @@ http://localhost:8080/swagger-ui/index.html
 
 ---
 
-## 📡 Endpoints
+## Endpoints
 
 ### Autenticação (público)
 
